@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: sms_survey_development
+
+test:
+  <<: *default
+  database: sms_survey_test
+
+#
+production:
+  <<: *default
+  database: sms_survey_production
+  username: sms_survey
+  password: <%= ENV['SMS_SURVEY_DATABASE_PASSWORD'] %>

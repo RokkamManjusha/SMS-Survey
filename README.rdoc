@@ -1,0 +1,49 @@
+##Task:
+
+Create a rails application to show the results for TV SMS voting campaigns, derived from the log data similar to the attached tarball.
+
+I Followed the below steps to create application:
+
+
+1. I have written rake task to import data from tarball to datbase tables 
+
+2. I have Created campaign, choice and votes tables, added assoiciations for tables in respective models 
+
+3. I have added Bootstrap gem to display the campaign names and results in UI.
+
+
+
+  Please follow the below instructions to run the application:
+
+
+First, import all the data.
+
+## Installation Instructions
+
+Install gems and set up the database.
+
+```
+$ bundle install
+$ rake db:create
+$ rake db:migrate
+```
+
+## Instructions
+
+To careate tables in database with given data from the tarball and run below rake task
+
+```
+$ rake import_sms_polling:from_sms_poll file_path=sms_poll.txt
+```
+
+start the rails server
+
+```
+$ rails s
+```
+
+# Running Tests
+
+```
+$ rspec
+```

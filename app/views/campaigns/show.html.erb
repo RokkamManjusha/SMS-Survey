@@ -1,0 +1,23 @@
+<style type="text/css">
+.panel {
+	margin-bottom:5px;	
+
+}
+</style>
+
+<div class = "panel panel-heading col-md-8 col-md-offset-2 "><h2>Campaign: <%= @campaign.name %></h2>
+  <% @campaign.choices.each do |choice| %>
+  <div class ="panel panel-primary" >
+  	<div class="panel panel-heading" >
+      	<%= choice.name %>
+    </div>
+        <div class="panel panel-body" style="padding:0px">
+      		Votes: <%= choice.counted_votes %>
+  		</div>
+   </div>
+  <% end %>
+  	<div class="row">
+  		<span class = "bold"><h3>Uncounted Votes: <%= @campaign.invalid_votes %></h3></span>
+	</div>
+</div>
+

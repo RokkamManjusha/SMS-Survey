@@ -1,0 +1,26 @@
+<div class ='row'>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+    <div class="panel-heading centre"><h3> <span class="label label-default text-center">CAMPAIGNS</span></h3>
+     </div>
+    <div class="panel-body">
+    	<p>Please click on a campaign to get list of the Candidates, their Scores, and the Number of Messages</p>
+    </div>
+    <% campaign_no = 1 %>
+	<% if @campaigns.any? %>
+	<table class="table">
+		<th>S.No
+		</th>
+		<th>Name</th>
+		    <ul class="list-group">
+		        <% @campaigns.each_with_index do |campaign,index| %>
+		            		     <tr><td><%= index + 1 %></td>
+<td>
+		        	<%= link_to campaign.name, campaign_path(campaign)%>
+		      		</td></tr>
+		    	<% end %>
+	  		</ul>
+	</table>
+	<% end %>
+</div>
+</div>
